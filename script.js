@@ -43,10 +43,36 @@ var tables = [
 ];
 
 //ajouter la fonction draw sur le bouton
-document.getElementById("btn").addEventListener("click", draw);
+document.getElementById("btn").addEventListener("click", animate);
 
 //on apel notre fonction draw (youpie)
 drawEmpty();
+
+var time = 10;
+
+function animate() {
+    time = 1
+    for (var i = 0; i < 46; i++) {
+        setTimeout(function() {
+            draw();
+        }, time);
+        time = time * 1.2;
+    }
+    setTimeout(function() {
+        doneMessage();
+    }, 4500);
+}
+
+function doneMessage() {
+    var canvas = document.getElementById('local');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        ctx.font = '40px sans-serif';
+        ctx.fillStyle = "#32CD32";
+        ctx.fillText("Finis !", 320, 130);
+        ctx.stroke();
+    }
+}
 
 function drawEmpty() {
     var canvas = document.getElementById('local');
@@ -63,6 +89,7 @@ function drawEmpty() {
         ctx.strokeStyle = "#245060";
         for (var i = 0; i < 5; i++) {
             ctx.stroke();
+
         }
     }
 }
