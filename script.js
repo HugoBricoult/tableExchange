@@ -46,7 +46,26 @@ var tables = [
 document.getElementById("btn").addEventListener("click", draw);
 
 //on apel notre fonction draw (youpie)
-draw();
+drawEmpty();
+
+function drawEmpty() {
+    var canvas = document.getElementById('local');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        //Dessiner un gros carré blanc (pour un éventuel reset)
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, 540, 940);
+        //Dessiner les tables et le local
+        for (var i = 0; i < tables.length; i++) {
+            ctx.rect(tables[i][0], tables[i][1], tables[i][2], tables[i][3]);
+        }
+        //mettre les lignes en bleu et repasser 5 fois dessus a cause de cette put*** de transparence qui sort de null part
+        ctx.strokeStyle = "#245060";
+        for (var i = 0; i < 5; i++) {
+            ctx.stroke();
+        }
+    }
+}
 
 
 function draw() {
