@@ -28,12 +28,12 @@
 
 ### Ou en n'est le derouelment du projet
 
-Debut d'idée 
-Creation du Balissage canvas **HTML** **[x]**
-Creation Du style.css **[x]**
-creation du Script.js **[x]**
-En finalisation **[x]**
-fin
+- Debut d'idée 
+- Creation du Balissage canvas **HTML** **[x]**
+- Creation Du style.css **[x]**
+- creation du Script.js **[x]**
+- En finalisation **[x]**
+- fin
 
 ### Realisateur du projet 
 
